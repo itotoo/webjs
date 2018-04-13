@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="./libs/web.js"></script>
+    <script>
+        (function(){
+            Systemjs.proto.extend({
+                haha:function(){
+                    console.log('000000000000000')
+                },
+                aaaaaa:function(){
+                    console.log('11111111111111')
+                },
+            })
+            Systemjs.extend({
+                xxxx:function(){
+                    console.log(this)
+                    if (!(this instanceof Systemjs.xxxx)) {
+                        return new Systemjs.xxxx(arguments);
+                    }
+                    this.init(arguments);
+                }
+            })
+            Systemjs.xxxx.prototype = {
+                init: function(){
+                    console.log('00001010110011010101011010')
+                }
+            }
+        })();
+        // 扩展
+        (function(){
+            Systemjs.proto.extend({
+                xxx:function(){
+                    if (!(this instanceof cccccc)) {
+                        return new cccccc(arguments);
+                    }
+                    console.log('*-*-*-*',this)
+                    this.init(arguments);
+
+                    xxx.prototype = {
+                        // 这样吗
+                    }
+                }
+            })
+        })();
+
+    </script>
+</body>
+</html>
